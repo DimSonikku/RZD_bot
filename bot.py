@@ -81,7 +81,6 @@ async def inputTextActivated(message: types.Message, state: FSMContext):
         await BotStates.menu.set()
 
     else:
-        getAnswer(message.text)
         markup = ReplyKeyboardMarkup(resize_keyboard=True).add(goBackButton, againButton)
         text = process_text(message.text, "Коллективный договор.pdf")
         MAX_MESSAGE_LENGTH = 4096
@@ -105,19 +104,6 @@ async def about_bot_activated(message: types.Message, state: FSMContext):
     await message.answer("Это бот для информации о РЖД.", reply_markup=markup)
     await BotStates.menu.set()
 
-
-# Функции для работы с JSON
-def logToJson(data, filename):
-    with open(filename, 'w', encoding="utf-8") as file:
-        json.dump(data, file)
-
-
-def getFromJson(filename):
-    with open(filename, 'r', encoding="utf-8") as file:
-        return json.load(file)
-
-def getAnswer(messageText):
-    pass
 
 
 # Запуск бота
