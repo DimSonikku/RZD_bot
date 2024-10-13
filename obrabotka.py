@@ -40,7 +40,6 @@ def process_text(question, file_path):
 
     # Удаляем стоп-слова (предлоги, местоимения и прочие малозначительные слова)
     filtered_tokens = [word for word in tokens if (word.lower() not in stop_words and word.lower() not in string.punctuation)]
-
     # Извлечение ключевых существительных и глаголов
     keywords = []
     for token in filtered_tokens:
@@ -60,4 +59,4 @@ def process_text(question, file_path):
             num += 1
       references += "----------------------------------------------\n\n"
 
-      return references
+    return references
