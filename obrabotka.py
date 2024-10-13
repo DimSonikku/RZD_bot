@@ -8,6 +8,7 @@ import string
 
 morph = pymorphy2.MorphAnalyzer()
 nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 stop_words = set(stopwords.words('russian'))
 
